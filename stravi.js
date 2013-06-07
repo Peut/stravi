@@ -1,15 +1,8 @@
 if (Meteor.isClient) {
-  Template.hello.greeting = function () {
-    return "Test lala";
-  };
-
-  Template.hello.events({
-    'click input' : function () {
-      // template data, if any, is available in 'this'
-      if (typeof console !== 'undefined')
-        console.log("You pressed the button");
-    }
-  });
+	$(document).ready(function() {
+		//var g = new Stravi.Game();
+		console.log("loaded");
+	})
 }
 
 if (Meteor.isServer) {
