@@ -1,8 +1,7 @@
 if (Meteor.isClient) {
-	$(document).ready(function() {
-		//var g = new Stravi.Game();
-		console.log("loaded");
-	})
+	Meteor.startup(function () {
+		g = new Stravi.Game();
+	});
 }
 
 if (Meteor.isServer) {
