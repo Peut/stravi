@@ -12,7 +12,7 @@ if (Meteor.isClient) {
     Meteor.startup(function () {
         
         Meteor.subscribe('tiles', function() {
-            console.log(tileCollection.find().count());
+            
         });
         
         g = new Stravi.Game();
