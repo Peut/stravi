@@ -10,11 +10,8 @@ tileCollection = new Meteor.Collection('tiles');
 
 if (Meteor.isClient) {
     Meteor.startup(function () {
-        
-        Meteor.subscribe('tiles', function() {
-            
-        });
-        
+        Meteor.subscribe('tiles', function() {});
+
         g = new Stravi.Game();
     });
 }
@@ -22,8 +19,20 @@ if (Meteor.isClient) {
 if (Meteor.isServer) {
     Meteor.startup(function () {
         // code to run on server at startup
+
         Meteor.publish('tiles', function() {
+            //return tileCollection.find({'owner': this.userId});
             return tileCollection.find();
+        });
+        var u = new Stravi.Utils;
+        Meteor.methods({
+            install: function() {
+                u.clear();
+                u.install();
+            },
+            terrain: function() {
+                u.terrainGenerator();
+            }
         });
     });
 }
