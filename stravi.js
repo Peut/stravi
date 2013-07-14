@@ -6,13 +6,14 @@ Accounts.loginServiceConfiguration.insert({
 });
 */
 
+// Tiles
 tileCollection = new Meteor.Collection('tiles');
 
 if (Meteor.isClient) {
     Meteor.startup(function () {
         Meteor.subscribe('tiles', function() {});
-
         g = new Stravi.Game();
+        g.start();
     });
 }
 

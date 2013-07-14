@@ -7,6 +7,6 @@ insecure
 preserve-inputs
 jquery
 less
-kinetic
 accounts-facebook
 accounts-ui
+kinetic
